@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hitech-chronicles.com/sitemap.xml

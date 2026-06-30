@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+    .desktop-nav .nav-links {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    body {
+        padding-bottom: 70px; /* Make room for bottom nav */
+    }
+    
+    #app-content {
+        padding: 2rem 1rem;
+    }
+    
+    #app-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        padding-bottom: 0;
+    }
+}

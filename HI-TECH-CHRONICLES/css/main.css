@@ -1,0 +1,47 @@
+:root {
+    --bg-base: #0a0b0f;
+    --bg-surface: #14161c;
+    --bg-surface-raised: #1c1f28;
+    --text-primary: #f5f6f8;
+    --text-secondary: #9a9fae;
+    --border-subtle: rgba(255,255,255,0.06);
+    --border: var(--border-subtle);
+    --accent: #6366f1;
+    --accent-secondary: #3b82f6;
+    --accent-glow: rgba(99,102,241,0.25);
+    
+    --font-family: 'Inter', sans-serif;
+}
+
+.light-mode {
+    --bg-base: #f8f9fb;
+    --bg-surface: #ffffff;
+    --bg-surface-raised: #ffffff;
+    --text-primary: #0a0b0f;
+    --text-secondary: #5a5f6d;
+    --border-subtle: rgba(0,0,0,0.08);
+    --border: var(--border-subtle);
+    --accent: #6366f1;
+    --accent-secondary: #3b82f6;
+    --accent-glow: rgba(99,102,241,0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px; /* Space for mobile nav */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

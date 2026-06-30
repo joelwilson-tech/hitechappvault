@@ -1,0 +1,72 @@
+
+/* Admin Styles */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    border-color: var(--accent);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.admin-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.action-btn:hover {
+    text-decoration: underline;
+}
+
+/* Quill Overrides for Dark Mode */
+.ql-toolbar {
+    background: var(--bg-surface-raised);
+    border-color: var(--border-subtle) !important;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.ql-container {
+    border-color: var(--border-subtle) !important;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-family: inherit !important;
+    font-size: 1rem !important;
+}
+.ql-snow .ql-stroke { stroke: var(--text-secondary) !important; }
+.ql-snow .ql-fill, .ql-snow .ql-stroke.ql-fill { fill: var(--text-secondary) !important; }
+.ql-snow .ql-picker { color: var(--text-secondary) !important; }

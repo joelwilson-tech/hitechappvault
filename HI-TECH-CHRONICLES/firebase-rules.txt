@@ -1,0 +1,55 @@
+# Firebase Security Rules
+
+Since we are prioritizing a free, serverless infrastructure using Firebase (Spark Plan) and GitHub Releases, it is critical to secure your Firestore database and Firebase Storage buckets. 
+
+Because we only allow administrators to manage apps, we will implement simple rules to lock down writes while leaving reads public.
+
+### How to apply these rules:
+1. Go to the Firebase Console -> **Firestore Database** -> **Rules** tab.
+2. Paste the Firestore rules and click Publish.
+3. Go to **Storage** -> **Rules** tab.
+4. Paste the Storage rules and click Publish.
+
+---
+
+## 1. Firestore Rules
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Anyone can view the apps, files, videos, and stats
+    match /{document=**} {
+      allow read: if true;
+    }
+    
+    // Only logged-in administrators can create, update, or delete data
+    match /{document=**} {
+      allow write: if request.auth != null;
+    }
+    
+  }
+}
+```
+
+## 2. Firebase Storage Rules
+```javascript
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    match /{allPaths=**} {
+      // Anyone can view assets like icons or screenshots
+      allow read: if true;
+      
+      // Only authenticated admins can upload new assets
+      allow write: if request.auth != null;
+    }
+    
+  }
+}
+```
+
+### GitHub Releases Reminder
+As designed in the architecture, **DO NOT upload APKs, ZIPs, or MP4s to Firebase Storage**. 
+Upload these large files to GitHub Releases, copy the download URL, and paste it into the "Download URL" field in the HI-TECH CHRONICLES Admin Panel. This guarantees 100% free hosting permanently.
